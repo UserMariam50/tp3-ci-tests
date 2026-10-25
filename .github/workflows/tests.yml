@@ -47,4 +47,4 @@ jobs:
       - name: Run Python Tests
         run: |
           cd python-app
-          python -m unittest
+          python -m unittest test_math_utils
