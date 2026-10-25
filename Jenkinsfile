@@ -20,7 +20,8 @@ pipeline {
 
         stage('Run Python tests') {
             steps {
-                dir('python-app') {
+               dir('python-app') {
+                    bat 'python -m pip install unittest-xml-reporting'
                     bat 'python -m unittest'
                 }
             }
