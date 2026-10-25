@@ -1,5 +1,6 @@
 
 import unittest
+import xmlrunner
 from math_utils import factorial
 
 
@@ -12,4 +13,4 @@ class TestFactorial(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(testRunner=xmlrunner.XMLTestRunner(output='test-reports'))

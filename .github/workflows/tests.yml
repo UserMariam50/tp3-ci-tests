@@ -44,7 +44,17 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run Python Tests
+      
+      - name: Run Python Tests and Generate XML Report
         run: |
           cd python-app
-          python -m unittest test_math_utils
+          pip install unittest-xml-reporting
+          python test_math_utils.py
+
+      - name: Upload Python Test Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: python-test-report
+          path: python-app/test-reports/
+
